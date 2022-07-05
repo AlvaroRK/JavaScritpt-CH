@@ -1,13 +1,293 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./public/assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <title>Arg in EE.UU.</title>
 </head>
-<body>
-    <h1>Desafio:Simulador interactivo</h1>
-    <script src="index.js"></script>
+<body id="home">
+    <header  class="header">
+        <a class="logo" href="#home">Arg in EE.UU.</a>
+        <a class="logo" href="#home">A in E</a>
+
+        <a class="cart" href="#"><i class="far fa-shopping-cart"></i></a>
+        <button class="button">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Pro<span>du</span>cts</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <div class="carrousel">
+            <div class="conteCarrousel">
+                <div class="itemCarrousel" id="itemCarrousel-1">
+                    <div class="itemCarrouselCard">
+                        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://traveler-designer.com/wp/wp-content/uploads/2021/08/IMG_1002-845x550.jpg" alt="variedad-1">
+                    </div>
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-3">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-2">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="itemCarrousel" id="itemCarrousel-2">
+                    <div class="itemCarrouselCard">
+                        <img src="https://pbs.twimg.com/media/Co25L7UWYAAwsRk.jpg" alt="variedad-2">
+                    </div>
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-1">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-3">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="itemCarrousel" id="itemCarrousel-3">
+                    <div class="itemCarrouselCard">
+                        <img src="https://c8.alamy.com/compes/gk76x4/miami-florida-coral-way-alameda-gourmet-market-tienda-pequena-empresa-comida-importada-etnica-argentina-productos-argentinos-yerba-mate-te-de-hojas-sueltas-gk76x4.jpg" alt="variedad-3">
+                    </div>
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-2">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-1">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="popular">
+            <h2>Most popular products</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="./public/assets/img/Fernet 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Fernet Branca 750ml</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $1300</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/CocaCola 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Coca Cola 1.5Lts</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+                        
+                        <div class="prices">
+                            <p>Price $190</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/Mate 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Mate</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+                        
+                        <div class="prices">
+                            <p>Price $1400</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/YerbaMate 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Yerba mate</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+                        
+                        <div class="prices">
+                            <p>Price $700</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <article class="ad"><h2>there must be an ad here</h2></article>
+
+    <main id="products" class="main">
+        <section class="products">
+            <h2>All the products</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="./public/assets/img/JorgitoChoco 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Alfajor Jorgito de chocolate</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $81</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/DonSatur 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Don Satur Dulce</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $120</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/PipasGirasol 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Pipas Girasol</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $50</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/Chocolinas 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Chocolinas</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $170</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/DulceDeLeche 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Dulce de leche</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $500</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/Tita 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Tita</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $75</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/Havanna 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Alfajor Havanna 12unids</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $2800</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/assets/img/PicoDulce 550X550.png" alt="product">
+                    <div class="card-description">
+                        <h4>Pico Dulce</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+
+                        <div class="prices">
+                            <p>Price $800</p>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <article class="ad"><h2>there must be an ad here</h2></article>
+
+    <main id="contact" class="main">
+        <section class="contact">
+            <h2>Contact me</h2>
+            <form class="form" action="">
+                <input type="text" placeholder="Name:">
+                <input type="email" placeholder="Email:">
+                <textarea cols="30" rows="10" placeholder="Message:"></textarea>
+                
+                <div class="send">
+                    <input class="input-btn" type="submit" value="Send">
+                    <input class="input-btn" type="reset" value="Restore">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h4>
+            Copyright © 2022 The Best Store Calle 123, Washington DC, United States
+        </h4>
+        <div class="icons">
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fas fa-phone-alt"></i></a>
+        </div>
+        <a href="#home" class="toHome">Go to start</a>
+    </footer>
+    <script defer src="./public/js/index.js"></script>
 </body>
 </html>

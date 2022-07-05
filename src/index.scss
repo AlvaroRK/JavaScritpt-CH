@@ -1,0 +1,31 @@
+@import "./reset";
+@import "./mixins";
+
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./pages/home";
+@import "./pages/products";
+@import "./pages/contact";
+
+body{
+    width: 100%;
+    margin: auto;
+    background-color: #74ACDF;
+
+    @include media(){
+        width: 85%;
+    }
+}
+
+.ad{
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 200px;
+    margin: 100px auto;
+
+    h2{
+        font-size: 24px;
+        text-align: center;
+    }
+}

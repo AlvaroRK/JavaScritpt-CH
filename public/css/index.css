@@ -1,0 +1,747 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+form, input, .main .contact .form textarea, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  line-height: 1.4em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+  padding: 0 20px;
+  line-height: 4rem;
+  height: 4rem;
+  color: white;
+  z-index: 100;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #74abdfd7;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 700px) {
+  .header {
+    width: 85%;
+    position: fixed;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.header .logo {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  font-size: 2rem;
+  text-decoration: none;
+  display: none;
+}
+
+.header .logo:nth-child(2) {
+  display: block;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .logo {
+    display: block;
+  }
+  .header .logo:nth-child(2) {
+    display: none;
+  }
+}
+
+.header .cart {
+  position: absolute;
+  right: 4.5rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.header .button {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .button {
+    display: none;
+  }
+}
+
+.header .button i {
+  color: #ffff;
+  font-size: 1.5rem;
+}
+
+.header .nav {
+  z-index: 100;
+  background-color: #74abdfd7;
+  opacity: 0;
+  height: 0vh;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .nav {
+    opacity: 1;
+    height: auto;
+    pointer-events: auto;
+    overflow: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.header .nav.activo {
+  opacity: 1;
+  height: 40vh;
+  pointer-events: auto;
+}
+
+.header .nav ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.header .nav ul li {
+  margin: 1em 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .nav ul li {
+    border-radius: 25px;
+    margin: 0 1rem;
+    list-style: none;
+  }
+}
+
+.header .nav ul li a {
+  text-align: center;
+  display: block;
+  width: 100vw;
+  line-height: 70px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  z-index: 10000;
+}
+
+.header .nav ul li a:hover {
+  background-color: #4692e3;
+}
+
+@media only screen and (min-width: 700px) {
+  .header .nav ul li a {
+    width: auto;
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    line-height: normal;
+  }
+  .header .nav ul li a:hover {
+    background: none;
+  }
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background-color: #575757;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer h4 {
+  text-align: justify;
+  font-size: 18px;
+  color: #b9b9b9;
+  font-weight: 400;
+}
+
+.footer .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
+}
+
+.footer .icons a {
+  margin: 0 10px;
+}
+
+.footer .icons i {
+  font-size: 1.4rem;
+  color: #e9e9e9;
+}
+
+.footer .toHome {
+  background-color: white;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 25px;
+}
+
+.footer .toHome a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+}
+
+.main {
+  position: relative;
+  top: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .main {
+    top: 4rem;
+  }
+}
+
+.main .carrousel {
+  width: 85%;
+  margin: auto;
+}
+
+@media only screen and (min-width: 700px) {
+  .main .carrousel {
+    width: 100%;
+  }
+}
+
+.main .carrousel .conteCarrousel {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+
+.main .carrousel .conteCarrousel .itemCarrousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .carrousel .conteCarrousel .itemCarrousel .itemCarrouselCard {
+  width: 100%;
+  height: 100%;
+}
+
+.main .carrousel .conteCarrousel .itemCarrousel .itemCarrouselArrows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.main .carrousel .conteCarrousel .itemCarrousel .itemCarrouselArrows > i:hover {
+  cursor: pointer;
+}
+
+.main .carrousel .conteCarrousel .itemCarrousel .itemCarrouselArrows > a > i {
+  color: white;
+}
+
+@media only screen and (min-width: 700px) {
+  .main .carrousel .conteCarrousel {
+    height: 30rem;
+  }
+}
+
+.main .popular h2 {
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.main .popular .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .popular .cards .card {
+  border: 3px solid #F6B40E;
+  background-color: white;
+  margin: 10px 0;
+  width: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.main .popular .cards .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  width: 100%;
+  height: 70%;
+  border-bottom: 3px solid #F6B40E;
+}
+
+.main .popular .cards .card-description {
+  height: 30%;
+  padding: 10px;
+}
+
+.main .popular .cards .card-description h4 {
+  font-weight: 600;
+}
+
+.main .popular .cards .card-description .prices {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .popular .cards .card-description .prices p {
+  color: #74ACDF;
+}
+
+.main .popular .cards .card-description .prices button {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 11px;
+  border-radius: 25px;
+  background-color: #74ACDF;
+}
+
+@media only screen and (min-width: 700px) {
+  .main .popular .cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 24%;
+  }
+  .main .popular .cards .card:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+.main .products h2 {
+  font-size: 28px;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.main .products .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .products .cards .card {
+  border: 3px solid #F6B40E;
+  background-color: white;
+  margin: 10px 0;
+  width: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.main .products .cards .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  width: 100%;
+  height: 70%;
+  border-bottom: 3px solid #F6B40E;
+}
+
+.main .products .cards .card-description {
+  height: 30%;
+  padding: 10px;
+}
+
+.main .products .cards .card-description h4 {
+  font-weight: 600;
+}
+
+.main .products .cards .card-description .prices {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .products .cards .card-description .prices p {
+  color: #74ACDF;
+}
+
+.main .products .cards .card-description .prices button {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 11px;
+  border-radius: 25px;
+  background-color: #74ACDF;
+}
+
+@media only screen and (min-width: 700px) {
+  .main .products .cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 24%;
+  }
+  .main .products .cards .card:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+.main .contact {
+  margin-bottom: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .contact h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+}
+
+.main .contact .form {
+  width: 78%;
+}
+
+.main .contact .form input, .main .contact .form textarea {
+  margin: 10px 0;
+  width: 100%;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  outline: none;
+}
+
+.main .contact .form input::-webkit-input-placeholder, .main .contact .form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.main .contact .form input:-ms-input-placeholder, .main .contact .form textarea:-ms-input-placeholder {
+  color: #fff;
+}
+
+.main .contact .form input::-ms-input-placeholder, .main .contact .form textarea::-ms-input-placeholder {
+  color: #fff;
+}
+
+.main .contact .form input::placeholder, .main .contact .form textarea::placeholder {
+  color: #fff;
+}
+
+.main .contact .form textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.main .contact .form .send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .contact .form .send .input-btn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 3px solid #fff;
+  border-radius: 25px;
+  padding: 7px 12px;
+  background-color: #74ACDF;
+}
+
+@media only screen and (min-width: 700px) {
+  .main .contact .form {
+    width: 50%;
+  }
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  background-color: #74ACDF;
+}
+
+@media only screen and (min-width: 700px) {
+  body {
+    width: 85%;
+  }
+}
+
+.ad {
+  background-color: white;
+  width: 85%;
+  height: 200px;
+  margin: 100px auto;
+}
+
+.ad h2 {
+  font-size: 24px;
+  text-align: center;
+}

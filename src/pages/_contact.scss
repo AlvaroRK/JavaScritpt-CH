@@ -1,0 +1,56 @@
+.main{
+    .contact{
+        margin-bottom: 100px;
+        width: 100%;
+        @include flex(column, nowrap, center, center);
+
+        h2{
+            text-align: center;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .form{
+            width: 78%;
+
+            input{
+                margin: 10px 0;
+                width: 100%;
+                color: #fff;
+                border-bottom: 2px solid #fff;
+                outline: none;
+
+                &::placeholder{
+                    color: #fff;
+                }
+            }
+
+            textarea{
+                @extend input;
+                max-width: 100%;
+                min-width:100%;
+                min-height: 100px;
+                max-height: 150px;
+                overflow: auto;
+            }
+
+            .send{
+                @include flex(row, nowrap, space-around, center);
+
+                .input-btn{
+
+                    width: max-content;
+                    border: 3px solid #fff;
+                    border-radius: 25px;
+                    padding: 7px 12px;
+                    background-color: #74ACDF;
+                }
+            }
+
+
+            @include media() {
+                width: 50%;
+            }
+        }
+    }
+}
