@@ -26,32 +26,22 @@
                     border-bottom: 3px solid #F6B40E;
                 }
 
-                &-description{
-                    height: 30%;
-                    padding: 10px;
-
-                    h4{
-                        font-weight: 600;
-                    }
-
-                    .prices{
-                        height:50%;
-                        @include flex (row, nowrap, space-around, center);
-
-                        p{
-                          color: #74ACDF;  
-                        }
-
-                        button{
-                            color: #ffffff;
-                            cursor: pointer;
-                            font-size: 14px;
-                            padding: 6px 11px;
-                            border-radius: 25px;
-                            background-color: #74ACDF;
-                        }
-                    }
+                h4{
+                    font-weight: 600;
                 }
+
+                p{
+                    position: relative;
+                    top: 7px;
+                    color: #74ACDF;  
+                }
+                
+                .btnAddToCart{
+                    margin: 0 5px 5px 0;
+                    background-color: #74ACDF;
+                    padding: 8px;
+                    border-radius: 25px
+                }            
             }
 
             @include media(){
@@ -64,6 +54,65 @@
                         margin-left: 0;
                     }
                 }
+            }
+        }
+    }
+
+    .plusMinus{
+        display:inline;
+        margin: 0 5px;
+        width: 25px;
+        height: 25px;
+        padding: 3px;
+        border-radius: 25%;
+
+        &:nth-child(1){
+            background-color: rgb(15, 250, 50);
+        }
+
+        &:nth-last-child(1){
+            background-color: red;
+        }
+    }
+
+    .cartBox{
+        margin:100px auto;
+        width: 80%;
+        background-color: #ffffff;
+        border: 3px solid #F6B40E;
+
+        #items{
+            background-color: #74ACDF;
+
+            .productoEnCarrito{
+                padding: 10px;
+                @include flex (row, nowrap, space-between,center);
+                border-bottom:3px solid #F6B40E ;
+
+                p{
+                    position: relative;
+                    top: 8px;
+                }
+            }
+        }
+
+        @include media(){
+            width: 40%;
+        }
+
+        button{
+            background-color: #74ACDF;
+            padding: 8px;
+            border-radius: 25px;
+        }
+
+        .footCartBox{
+            @include flex (row, nowrap, space-around,center);
+            padding: 5px;
+
+            p{
+                position: relative;
+                top: 10px;
             }
         }
     }

@@ -12,6 +12,7 @@
     @include flex( row , wrap , space-between, center );
 
     @include media(){
+        overflow: hidden;
         width: 85%;
         position: fixed;
         top: 0;
@@ -75,6 +76,8 @@
         @include flex( column , nowrap , center , center );
 
         @include media(){
+            position: relative;
+            top: 10px;
             opacity: 1;
             height: auto;
             pointer-events:auto;

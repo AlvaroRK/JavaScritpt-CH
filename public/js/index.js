@@ -14,100 +14,84 @@ const divi  = (a,b) => a / b;
 
 
 
-    /* ---COSTO TOTAL DE PRODUCTOS--- */
+    /* ---DEPLOY PRODUCTS--- */
 
 
+    const cards = document.getElementById("cards");
+    const cartContainer = document.getElementById("items");
+    const emptyButton = document.getElementById("vaciarCarrito");
+    const cartCounter = document.getElementById("contadorCarrito")
+    const totalPrice = document.getElementById("precioTotal")
 
-    const shopCart = [];
+    emptyButton.addEventListener("click", () => {
+      cart.length = 0
+      updateCart()
+    })
 
-    const discount1 = 300;
-    const discount2 = 100;
-    
-    let totalPagar = 0;
-    let cantProductos = parseInt(prompt("Enter the number of products to take"));
-    let presupuesto = parseInt(prompt("Tell me your budget"));
-    
-    for (let i=1; i<= cantProductos; i++) {
-    
-        class productos {
-            constructor (name, price, amount) {
-                this.name = name;
-                this.price = price;
-                this.amount = amount;
-                this.soldOut = false;
-            }
-        
-            sell(){
-                this.soldOut = true;
-            }
-        }
-    
-        let nameProduct = prompt(`Enter product name ${i}`);
-        let priceProduct = parseFloat(prompt("Enter the price of the product:"));
-        let cantProduct = parseFloat(prompt("Enter the quantity of the product:"));
-        let priceCant = 0;
-    
-        if (cantProduct > 5 ) {
-            priceCant = resta(multi(priceProduct, cantProduct), discount1);
-            console.log("You used the $300 discount");
-        } else if (cantProduct > 3 ) {
-            priceCant = resta(multi(priceProduct, cantProduct), discount2);
-            console.log("You used the $100 discount");
-        }
-        else {
-            priceCant = multi(priceProduct, cantProduct);
-        }
-        
-    
-    
-        let msj = (`You entered ${nameProduct} x ${cantProduct} by $${priceCant}`);
-        console.log(msj);
-    
-        totalPagar += priceCant;
-    
-        if (totalPagar > presupuesto) {
-            alert("YOU EXCEEDED YOUR BUDGET");
-            console.log("YOU EXCEEDED YOUR BUDGET");
-            break;
-        }
-    
-    
-        const producto$ = new productos(nameProduct, priceProduct, cantProduct);
-        producto$.sell();
+let listProducts = [
+  {id:1 ,image:"./public/assets/img/Fernet 550X550.png" ,desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Fernet Branca 750ml", precio: 1300, cantidad:1},
+  {id:2 ,image:"./public/assets/img/CocaCola 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Coca Cola 1.5Lts", precio: 190, cantidad:1},
+  {id:3 ,image:"./public/assets/img/Mate 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Mate", precio: 1400, cantidad:1},
+  {id:4 ,image:"./public/assets/img/YerbaMate 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Yerba mate", precio: 700, cantidad:1},
+  {id:5 ,image:"./public/assets/img/JorgitoChoco 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Alfajor Jorgito|chocolate", precio: 81, cantidad:1},
+  {id:6 ,image:"./public/assets/img/DonSatur 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Don Satur Dulce", precio: 120, cantidad:1},
+  {id:7 ,image:"./public/assets/img/PipasGirasol 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Pipas Girasol", precio: 50, cantidad:1},
+  {id:8 ,image:"./public/assets/img/Chocolinas 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Chocolinas", precio: 170, cantidad:1},
+  {id:9 ,image:"./public/assets/img/DulceDeLeche 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Dulce de leche", precio: 500, cantidad:1},
+  {id:10 ,image:"./public/assets/img/Tita 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Tita", precio: 75, cantidad:1},
+  {id:11 ,image:"./public/assets/img/Havanna 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Alfajor Havanna 12unids", precio: 2800, cantidad:1},
+  {id:12 ,image:"./public/assets/img/PicoDulce 550X550.png",desc:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?",nombre: "Pico Dulce", precio: 800, cantidad:1},
+];
 
-        shopCart.push(producto$);
-    }
+/* ---SECCION DEL CARRITO DE COMPRAS--- */
 
-    console.log(shopCart);
+let cart = [];
 
-    let msjTotal = "The total to pay is: $" + totalPagar;
-        console.log(msjTotal);
+listProducts.forEach(producto => {
+  const div = document.createElement(`div`);
+  div.classList.add("card")
+  div.innerHTML = ` <img src="${producto.image}">
+                    <h4>${producto.nombre}</h4>
+                    <h3>${producto.desc}</h3>
+                    <p>$${producto.precio}</p>
+                    <button class="btnAddToCart" id="btn${producto.id}">Add to cart</button>
+ `;
+  cards.appendChild(div)
 
-    
+   const boton = document.getElementById(`btn${producto.id}`)
 
-    let deleteCart = prompt("Do you want to delete a product? yes or no");
+  boton.addEventListener("click", () => {
+    addToCart(producto.id)
+  })
+});
 
-    if (deleteCart == "yes") {
-        let cantDelete = parseInt(prompt("How many products do you want to remove?"));
+const addToCart = (prodId) => {
+  const item = listProducts.find((prod) => prod.id === prodId);
+  cart.push(item)
+  updateCart()
+  console.log(cart)
+}
 
-        for (let i = 1; i <= cantDelete; i++) {
-            let pregNombre = prompt(`Product name ${i} to remove`);
+const updateCart = () => {
+  cartContainer.innerHTML = ""
 
-            class eliminado {
-                constructor(nombre){
-                    this.nombre =nombre;
-                }
-            }
+  cart.forEach((prod) => {
+    const div = document.createElement('div');
+    div.className = ('productoEnCarrito');
+    div.innerHTML = `
+      <p>${prod.nombre}</p>
+      <p>Price: ${prod.precio}</p>
+      <p>Amount: <span id="cantidad">${prod.cantidad}</span></p>
+      <button onclick="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></button>`
+    cartContainer.appendChild(div)
+  })
+  cartCounter.innerText = cart.length
+  totalPrice.innerText = cart.reduce((acum , prod) => acum + prod.precio, 0)
+}
 
-            const eliminar = []
-
-            eliminar.push(new eliminado(pregNombre));
-
-            const deleteCart = eliminar.find(el => el.nombre == pregNombre);
-            console.log(deleteCart);
-            
-        }
-    } 
-    else {
-            alert("Okey")
-    }
+const removeFromCart = (prodId) => {
+  const item = cart.find((prod) => prod.id === prodId)
+  const indice = cart.indexOf(item)
+  cart.splice(indice, 1)
+  updateCart()
+}

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./public/assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./public/css/index.css">
     <title>Arg in EE.UU.</title>
@@ -15,7 +17,7 @@
         <a class="logo" href="#home">Arg in EE.UU.</a>
         <a class="logo" href="#home">A in E</a>
 
-        <a class="cart" href="#"><i class="far fa-shopping-cart"></i></a>
+        <a class="cart" href="#items"><i class="far fa-shopping-cart"></i><span id="contadorCarrito">0</span></a>
         <button class="button">
             <i class="fas fa-bars"></i>
         </button>
@@ -74,187 +76,19 @@
                 </div>
             </div>
         </div>
-        <section class="popular">
-            <h2>Most popular products</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="./public/assets/img/Fernet 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Fernet Branca 750ml</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $1300</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/CocaCola 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Coca Cola 1.5Lts</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-                        
-                        <div class="prices">
-                            <p>Price $190</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/Mate 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Mate</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-                        
-                        <div class="prices">
-                            <p>Price $1400</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/YerbaMate 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Yerba mate</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-                        
-                        <div class="prices">
-                            <p>Price $700</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <article class="ad"><h2>there must be an ad here</h2></article>
 
     <main id="products" class="main">
         <section class="products">
             <h2>All the products</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="./public/assets/img/JorgitoChoco 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Alfajor Jorgito de chocolate</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
+            <div class="cards" id="cards"></div>
+        </section>
 
-                        <div class="prices">
-                            <p>Price $81</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/DonSatur 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Don Satur Dulce</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $120</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/PipasGirasol 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Pipas Girasol</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $50</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/Chocolinas 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Chocolinas</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $170</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/DulceDeLeche 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Dulce de leche</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $500</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/Tita 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Tita</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $75</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/Havanna 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Alfajor Havanna 12unids</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $2800</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./public/assets/img/PicoDulce 550X550.png" alt="product">
-                    <div class="card-description">
-                        <h4>Pico Dulce</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?</p>
-
-                        <div class="prices">
-                            <p>Price $800</p>
-                            <button>
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <section class="cartBox">
+            <div id="items"> </div>
+            <div class="footCartBox">
+                <p class="precioProducto">total price: $<span id="precioTotal">0</span></p>
+                <button id="vaciarCarrito">Empty cart</button>
             </div>
         </section>
     </main>
@@ -264,7 +98,7 @@
     <main id="contact" class="main">
         <section class="contact">
             <h2>Contact me</h2>
-            <form class="form" action="">
+            <form id="formulario" class="form" action="">
                 <input type="text" placeholder="Name:">
                 <input type="email" placeholder="Email:">
                 <textarea cols="30" rows="10" placeholder="Message:"></textarea>
@@ -276,7 +110,6 @@
             </form>
         </section>
     </main>
-
     <footer class="footer">
         <h4>
             Copyright © 2022 The Best Store Calle 123, Washington DC, United States
