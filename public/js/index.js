@@ -47,6 +47,13 @@ let listProducts = [
 
 let cart = [];
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('cart')){
+    cart = JSON.parse(localStorage.getItem('cart'))
+    updateCart()
+  }
+})
+ 
 listProducts.forEach(producto => {
   const div = document.createElement(`div`);
   div.classList.add("card")
@@ -66,10 +73,20 @@ listProducts.forEach(producto => {
 });
 
 const addToCart = (prodId) => {
-  const item = listProducts.find((prod) => prod.id === prodId);
-  cart.push(item)
+
+  const existe = cart.some(prod => prod.id === prodId)
+
+  if(existe){
+    const prod = cart.map (prod => {
+      if (prod.id === prodId){
+        prod.cantidad ++
+      }
+    })
+  } else {
+    const item = listProducts.find((prod) => prod.id === prodId);
+    cart.push(item)
+  }
   updateCart()
-  console.log(cart)
 }
 
 const updateCart = () => {
@@ -82,8 +99,10 @@ const updateCart = () => {
       <p>${prod.nombre}</p>
       <p>Price: ${prod.precio}</p>
       <p>Amount: <span id="cantidad">${prod.cantidad}</span></p>
-      <button onclick="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></button>`
+      <button onclick="removeFromCart(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></button>`
     cartContainer.appendChild(div)
+
+    localStorage.setItem("cart", JSON.stringify(cart))
   })
   cartCounter.innerText = cart.length
   totalPrice.innerText = cart.reduce((acum , prod) => acum + prod.precio, 0)
@@ -93,5 +112,6 @@ const removeFromCart = (prodId) => {
   const item = cart.find((prod) => prod.id === prodId)
   const indice = cart.indexOf(item)
   cart.splice(indice, 1)
+  localStorage.removeItem("cart", "item")
   updateCart()
 }
