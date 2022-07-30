@@ -78,13 +78,26 @@ const addToCart = (prodId) => {
 
   if(existe){
     const prod = cart.map (prod => {
-      if (prod.id === prodId){
-        prod.cantidad ++
-      }
+      (prod.id === prodId) ? prod.cantidad ++ : "";
     })
   } else {
     const item = listProducts.find((prod) => prod.id === prodId);
     cart.push(item)
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1300,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: 'success',
+      title: `${item.nombre} agregado correctamente`
+    })
   }
   updateCart()
 }
@@ -113,5 +126,35 @@ const removeFromCart = (prodId) => {
   const indice = cart.indexOf(item)
   cart.splice(indice, 1)
   localStorage.removeItem("cart", "item")
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1300,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'error',
+    title: `${item.nombre} eliminado correctamente`
+  })
   updateCart()
 }
+
+/* SECCION DE CONTACTO */
+
+let btnSubmit = document.getElementById("btnSubmit")
+
+btnSubmit.addEventListener("click", () => {
+  Swal.fire({
+    toast: true,
+    icon:'success',
+    title:'Gmail enviado correctamente',
+    timer:1300,
+    showConfirmButton: false,
+    position:'top-end'
+  })
+})

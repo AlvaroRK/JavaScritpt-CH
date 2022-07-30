@@ -100,11 +100,11 @@
             <h2>Contact me</h2>
             <form id="formulario" class="form" action="">
                 <input type="text" placeholder="Name:">
-                <input type="email" placeholder="Email:">
+                <input type="email" placeholder="Gmail:">
                 <textarea cols="30" rows="10" placeholder="Message:"></textarea>
                 
                 <div class="send">
-                    <input class="input-btn" type="submit" value="Send">
+                    <input class="input-btn" id="btnSubmit" type="submit" value="Send">
                     <input class="input-btn" type="reset" value="Restore">
                 </div>
             </form>
@@ -121,6 +121,9 @@
         </div>
         <a href="#home" class="toHome">Go to start</a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="./public/js/index.js"></script>
 </body>
 </html>
