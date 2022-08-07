@@ -1,0 +1,14 @@
+[
+    {"id":1,"image":"./public/assets/img/Fernet 550X550.png" ,"desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Fernet Branca 750ml", "precio": 1300, "cantidad":1},
+    {"id":2,"image":"./public/assets/img/CocaCola 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Coca Cola 1.5Lts", "precio": 190, "cantidad":1},
+    {"id":3,"image":"./public/assets/img/Mate 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Mate", "precio": 1400, "cantidad":1},
+    {"id":4,"image":"./public/assets/img/YerbaMate 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Yerba mate", "precio": 700, "cantidad":1},
+    {"id":5,"image":"./public/assets/img/JorgitoChoco 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Alfajor Jorgito|chocolate", "precio": 81, "cantidad":1},
+    {"id":6,"image":"./public/assets/img/DonSatur 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Don Satur Dulce", "precio": 120, "cantidad":1},
+    {"id":7,"image":"./public/assets/img/PipasGirasol 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Pipas Girasol", "precio": 50, "cantidad":1},
+    {"id":8,"image":"./public/assets/img/Chocolinas 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Chocolinas", "precio": 170, "cantidad":1},
+    {"id":9,"image":"./public/assets/img/DulceDeLeche 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Dulce de leche", "precio": 500, "cantidad":1},
+    {"id":10 ,"image":"./public/assets/img/Tita 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Tita", "precio": 75, "cantidad":1},
+    {"id":11 ,"image":"./public/assets/img/Havanna 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Alfajor Havanna 12unids", "precio": 2800, "cantidad":1},
+    {"id":12 ,"image":"./public/assets/img/PicoDulce 550X550.png","desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, eaque?","nombre": "Pico Dulce", "precio": 800, "cantidad":1}
+]
