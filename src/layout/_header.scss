@@ -1,138 +1,149 @@
-.header{
-    padding: 0 20px;
-    line-height: 4rem;
-    height: 4rem;
-    color:white;
-    z-index: 100;
-    position: sticky;
+.header {
+  padding: 0 20px;
+  line-height: 4rem;
+  height: 4rem;
+  color: white;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  background-color: #74abdfd7;
+
+  @include flex(row, wrap, space-between, center);
+
+  @include media() {
+    overflow: hidden;
+    width: 85%;
+    position: fixed;
+    line-height: 0;
     top: 0;
-    background-color: #74abdfd7;
-    backdrop-filter: blur(3px);
-  
-    @include flex( row , wrap , space-between, center );
+    @include flex(row, nowrap, space-around, center);
+  }
 
-    @include media(){
-        overflow: hidden;
-        width: 85%;
-        position: fixed;
-        top: 0;
-        @include flex(row, nowrap, space-around, center);
+  .logo {
+    width: max-content;
+    color: #ffffff;
+    font-size: 2rem;
+    text-decoration: none;
+    display: none;
+
+    &:nth-child(2) {
+      display: block;
     }
 
-    .logo{
-        width: max-content;
-        color: #ffffff;
-        font-size: 2rem;
-        text-decoration: none;
-        display: none;
-
-        &:nth-child(2){
-            display: block;
-        }
-
-        &{
-            @include media(){
-                display: block;
-
-                &:nth-child(2){
-                    display: none;
-                }
-            }
-        }
-    }
-  
-    .cart{
-        position: absolute;
-        right: 4.5rem;
-        color:#fff;
-        font-size: 1.5rem;
-    }
-
-    .button{
+    & {
+      @include media() {
         display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
 
-        @include media(){ 
-            display: none;
+        &:nth-child(2) {
+          display: none;
         }
-
-        i{
-            color: #ffff;
-            font-size: 1.5rem;
-        }
-     }
-    
-    .nav{
-        z-index: 100;
-        background-color: #74abdfd7;
-        opacity: 0;
-        height:0vh;
-        pointer-events: none;
-        overflow: hidden;
-        transition: all .5s ease;
-        backdrop-filter: blur(3px);
-        @include flex( column , nowrap , center , center );
-
-        @include media(){
-            position: relative;
-            top: 10px;
-            opacity: 1;
-            height: auto;
-            pointer-events:auto;
-            overflow: none;
-            transition: none;
-        }
-  
-        &.activo{
-          opacity:1;
-          height:40vh;
-          pointer-events: auto;
-        }
-
-        ul{
-            flex-direction: column;
-          
-            @include media(){
-                @include flex(row, wrap,space-around, center);
-            }
-
-            li{
-                margin: 1em 0;
-                
-                @include media(){
-                    border-radius: 25px;
-                    margin: 0 1rem;
-                    list-style: none;
-                }
-
-                a{ 
-                    text-align: center;
-                    display: block;
-                    width:100vw;
-                    line-height: 70px;
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: 24px;
-                    z-index: 10000;
-        
-                    &:hover{
-                        background-color: rgb(70, 146, 227);
-                    }
-        
-                    @include media(){
-                        width: auto;
-                        padding: 10px 10px;
-                        font-size: 1.3rem;
-                        line-height: normal;
-        
-                        &:hover{
-                            background: none;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+
+  .cart {
+    position: absolute;
+    right: 4.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .button {
+    line-height: normal;
+    display: block;
+    border: none;
+    cursor: pointer;
+
+    @include media() {
+      display: none;
+    }
+
+    i {
+      color: #ffff;
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav {
+    z-index: 100;
+    background-color: #74abdfd7;
+    opacity: 0;
+    height: 0vh;
+    pointer-events: none;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(3px);
+    @include flex(column, nowrap, center, center);
+
+    @include media() {
+      @include flex(row, nowrap, center, center);
+      background: none;
+      position: relative;
+      opacity: 1;
+      height: auto;
+      pointer-events: auto;
+      overflow: none;
+      transition: none;
+    }
+
+    &.activo {
+      position: relative;
+      opacity: 1;
+      height: 60vh;
+      pointer-events: auto;
+    }
+
+    ul {
+        padding-top: 3rem;
+      flex-direction: column;
+
+      @include media() {
+        padding-top:0;
+        width: fit-content;
+        margin-bottom: 0;
+        padding-left: 0;
+        @include flex(row, wrap, center, center);
+      }
+
+      li {
+        margin: 1em 0;
+        list-style: none;
+
+        @include media() {
+          border-radius: 25px;
+          margin: 0 1em;
+
+          &:hover {
+            background-color: black;
+          }
+        }
+
+        a {
+          text-align: center;
+          display: block;
+          width: 100vw;
+          line-height: 70px;
+          text-decoration: none;
+          color: #fff;
+          font-size: 24px;
+          z-index: 10000;
+
+          &:hover {
+            background-color: rgb(70, 146, 227);
+          }
+
+          @include media() {
+            width: auto;
+            padding: 10px 10px;
+            font-size: 1.3rem;
+            line-height: normal;
+
+            &:hover {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -5,19 +5,9 @@ button.addEventListener('click',()=>{
     nav.classList.toggle('activo')
 })
 
-
-
-const suma  = (a,b) => a + b;
-const resta  = (a,b) => a - b;
 const multi  = (a,b) => a * b;
-const divi  = (a,b) => a / b;
-
-
-
 
 /* ---SECCION DEL CARRITO DE COMPRAS--- */
-
-
 
     const requestCatalog = async () => {
       try {

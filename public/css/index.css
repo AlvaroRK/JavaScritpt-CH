@@ -95,8 +95,6 @@ body {
   position: sticky;
   top: 0;
   background-color: rgba(116, 171, 223, 0.8431372549);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,6 +114,7 @@ body {
     overflow: hidden;
     width: 85%;
     position: fixed;
+    line-height: 0;
     top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -158,8 +157,8 @@ body {
   font-size: 1.5rem;
 }
 .header .button {
+  line-height: normal;
   display: block;
-  background: none;
   border: none;
   cursor: pointer;
 }
@@ -199,8 +198,21 @@ body {
 }
 @media only screen and (min-width: 700px) {
   .header .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: none;
     position: relative;
-    top: 10px;
     opacity: 1;
     height: auto;
     pointer-events: auto;
@@ -210,11 +222,13 @@ body {
   }
 }
 .header .nav.activo {
+  position: relative;
   opacity: 1;
-  height: 40vh;
+  height: 60vh;
   pointer-events: auto;
 }
 .header .nav ul {
+  padding-top: 3rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -222,6 +236,12 @@ body {
 }
 @media only screen and (min-width: 700px) {
   .header .nav ul {
+    padding-top: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 0;
+    padding-left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -229,8 +249,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -238,12 +259,15 @@ body {
 }
 .header .nav ul li {
   margin: 1em 0;
+  list-style: none;
 }
 @media only screen and (min-width: 700px) {
   .header .nav ul li {
     border-radius: 25px;
-    margin: 0 1rem;
-    list-style: none;
+    margin: 0 1em;
+  }
+  .header .nav ul li:hover {
+    background-color: black;
   }
 }
 .header .nav ul li a {
